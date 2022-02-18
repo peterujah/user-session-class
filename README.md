@@ -24,7 +24,7 @@ use Peterujah\NanoBlock\User;
 $guest = new User(User::GUEST);
 ```
 
-Or extend user class to create a custom handler
+Or extend `User` class to create a custom `Admin` class handler
 ```php
 class Admin extends  \Peterujah\NanoBlock\User{
     const GUEST = "_admin_guest_class_";
