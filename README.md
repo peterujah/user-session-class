@@ -5,7 +5,7 @@ Php User class handler
 class Admin extends  \Peterujah\NanoBlock\User{
     const GUEST = "_admin_guest_class_";
     const LIVE = "_admin_live_class_";
-	  public function __construct($db){
+    public function __construct($db){
         $this->db = $db;
         $this->index = "index";
         $this->setUserQuery("
@@ -14,7 +14,7 @@ class Admin extends  \Peterujah\NanoBlock\User{
             WHERE admin_id = :check_user_key
             LIMIT 1
         ");
-	  }
+    }
 
     public function setLastLogin($ip){
         $this->conn()->prepare("
