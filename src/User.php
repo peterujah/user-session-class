@@ -1,6 +1,6 @@
 <?php 
 /**
- * Cache - A simple php file cache
+ * Cache - A simple php user class for AfriMarketSquare
  * @author      Peter Chigozie(NG) peterujah
  * @copyright   Copyright (c), 2021 Peter(NG) peterujah
  * @license     MIT public license
