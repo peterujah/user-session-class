@@ -9,10 +9,10 @@ namespace Peterujah\NanoBlock;
 use \Peterujah\NanoBlock\DBController;
 class User{
     private $index = "login";
-	  protected $db;
+    protected $db;
     protected $conn_handler;
     protected $instanceQuery;
-	  public function __construct($db) {
+    public function __construct($db) {
         $this->db = $db;
         $this->setUserQuery("
             SELECT *
