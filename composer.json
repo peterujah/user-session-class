@@ -2,6 +2,16 @@
     "name": "peterujah/user-session-class",
     "type": "library",
     "description": "Php User session class.",
+    "keywords": [
+        "library",
+        "session",
+        "user object",
+        "web service",
+        "user",
+        "user class",
+        "session class",
+        "php user class"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -15,25 +25,14 @@
     "require-dev": {
         "peterujah/db-controller": "^0.1"
     },
-    "scripts": {
-        "post-install-cmd": [
-            "PeterUjah\\CopyFile\\ScriptHandler::copy"
-        ],
-        "post-update-cmd": [
-            "PeterUjah\\CopyFile\\ScriptHandler::copy"
-        ]
-    },
      "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "1.0-dev"
         }
     },
     "autoload": {
         "psr-4": { 
             "Peterujah\\NanoBlock\\": "src/" 
         }
-    },
-    
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
