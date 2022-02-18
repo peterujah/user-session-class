@@ -8,6 +8,8 @@
 namespace Peterujah\NanoBlock;
 use \Peterujah\NanoBlock\DBController;
 class User{
+    const GUEST = "_user_guest_class_";
+    const LIVE = "_user_live_class_";
     private $index = "login";
     protected $db;
     protected $conn_handler;
