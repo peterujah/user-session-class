@@ -24,7 +24,7 @@ use Peterujah\NanoBlock\User;
 $guest = new User(User::GUEST);
 ```
 
-
+Or extend user class to create a custom handler
 ```php
 class Admin extends  \Peterujah\NanoBlock\User{
     const GUEST = "_admin_guest_class_";
@@ -57,7 +57,7 @@ class Admin extends  \Peterujah\NanoBlock\User{
 }
 ```
 
-Or extend user class to create a custom handler
+Call the custom `Admin` session class
 ```php
 $admin = new Admin(Admin::LIVE);
 ```
