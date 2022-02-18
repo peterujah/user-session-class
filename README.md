@@ -56,3 +56,8 @@ class Admin extends  \Peterujah\NanoBlock\User{
     }
 }
 ```
+
+Or extend user class to create a custom handler
+```php
+$admin = new Admin(User::LIVE);
+```
