@@ -22,7 +22,7 @@ class User{
             WHERE user_key = :check_user_key
             LIMIT 1
         ");
-	  }
+    }
   
     public function setUserQuery($query){
       $this->instanceQuery = $query;
