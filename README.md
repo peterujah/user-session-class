@@ -5,7 +5,7 @@ Php User session class handler
 
 Installation is super-easy via Composer:
 ```md
-composer require peterujah/user-class
+composer require peterujah/user-session-class
 ```
 
 # USAGES
