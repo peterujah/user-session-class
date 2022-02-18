@@ -65,7 +65,8 @@ class User{
 
     public function conn(){
         if(empty($this->conn_handler)){
-            $this->conn_handler = new Conn($_SERVER["SERVER_NAME"]=="localhost");
+           //$this->conn_handler = new Conn($_SERVER["SERVER_NAME"]=="localhost");
+	    $this->conn_handler = new DBHandler($_SERVER['SERVER_NAME']);
         }
         return $this->conn_handler;
     }
