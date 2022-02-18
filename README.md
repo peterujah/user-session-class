@@ -1,5 +1,22 @@
 # user-class
-Php User class handler
+Php User session class handler
+
+## Installation
+
+Installation is super-easy via Composer:
+```md
+composer require peterujah/user-class
+```
+
+# USAGES
+
+Initialize DBController with configuration array
+
+```php
+$user = new \Peterujah\NanoBlock\User(\Peterujah\NanoBlock\User::LIVE);
+$guest = new \Peterujah\NanoBlock\User(\Peterujah\NanoBlock\User::GUEST);
+```
+
 
 ```php
 class Admin extends  \Peterujah\NanoBlock\User{
