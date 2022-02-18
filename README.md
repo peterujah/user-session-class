@@ -13,8 +13,15 @@ composer require peterujah/user-class
 Initialize DBController with configuration array
 
 ```php
-$user = new \Peterujah\NanoBlock\User(\Peterujah\NanoBlock\User::LIVE);
-$guest = new \Peterujah\NanoBlock\User(\Peterujah\NanoBlock\User::GUEST);
+use Peterujah\NanoBlock\User;
+$user = new User(User::LIVE);
+```
+
+OR as a guest
+
+```php
+use Peterujah\NanoBlock\User;
+$guest = new User(User::GUEST);
 ```
 
 
