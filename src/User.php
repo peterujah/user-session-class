@@ -72,6 +72,11 @@ class User{
         }
         return $this->conn_handler;
     }
+	
+    public function instant(){
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use instance() instead.', E_USER_DEPRECATED);
+        return $this->instance();
+    }
 
     public function instance(){
         $this->conn()->prepare($this->instanceQuery);
