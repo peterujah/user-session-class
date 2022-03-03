@@ -32,20 +32,28 @@ class Admin extends  \Peterujah\NanoBlock\User{
     public function __construct($db){
         $this->db = $db;
         $this->index = "index";
-        $this->setUserQuery("
-            SELECT *
-            FROM admin 
-            WHERE admin_id = :check_user_key
-            LIMIT 1
-        ");
+        $this->userTable = "admin_table_name";
+        $this->userIdentifier = "admin_id";
+        /*
+            Or you can se full query here
+            $this->setUserQuery("
+                SELECT *
+                FROM admin_table_name 
+                WHERE admin_id = :check_user_key
+                LIMIT 1
+            ");
+        */
     }
 
+    /**
+        Create additional method for admin
+    */
     public function setLastLogin($ip){
         $this->conn()->prepare("
-            UPDATE admin
+            UPDATE {$this->userTable}
             SET admin_last_login_date = NOW(),
                 admin_last_login_ip = :admin_last_login_ip  
-            WHERE admin_id = :admin_id
+            WHERE {$this->userIdentifier} = :admin_id
             LIMIT 1
         ");
         $this->conn()->bind(":admin_last_login_ip", $ip);
