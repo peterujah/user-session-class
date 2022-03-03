@@ -14,11 +14,13 @@ class User{
     private $tableSelect = "*";
     private $userTable = "user_table_name";
     private $userIdentifier = "user_id";
+    protected $db_config = array();
     protected $db;
     protected $conn_handler;
     protected $instanceQuery;
-    public function __construct($db) {
+    public function __construct($db, $conf = array()) {
         $this->db = $db;
+	$this->setDbConfig($conf);
         $this->setUserQuery("
             SELECT {$this->tableSelect}
             FROM  {$this->userTable} 
@@ -67,11 +69,18 @@ class User{
         unset($_SESSION[$this->db]);
         return $this;
     }
+	
+    public function setDbConfig($conf){
+	$this->db_config = $conf;
+    	return $this;
+    }
 
     public function conn(){
-        if(empty($this->conn_handler)){
-	    $this->conn_handler = new DBHandler($_SERVER['SERVER_NAME']);
-        }
+        if(empty($this->conn_handler) && class_exists('\Peterujah\NanoBlock\DBController') && !empty($this->db_config)){
+		 $this->conn_handler = new DBController($this->db_config);
+        }else{
+		throw new \Exception('\Peterujah\NanoBlock\DBController PDO connection is required, make sure you pass your inatll class first');
+	 }
         return $this->conn_handler;
     }
 	
