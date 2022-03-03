@@ -11,6 +11,8 @@ class User{
     const GUEST = "_user_guest_class_";
     const LIVE = "_user_live_class_";
     private $index = "login";
+    private $userTable = "user_table_name";
+    private $userIdentifier = "user_id";
     protected $db;
     protected $conn_handler;
     protected $instanceQuery;
@@ -18,8 +20,8 @@ class User{
         $this->db = $db;
         $this->setUserQuery("
             SELECT *
-            FROM  users 
-            WHERE user_key = :check_user_key
+            FROM  {$$userTable} 
+            WHERE {$$userIdentifier} = :check_user_key
             LIMIT 1
         ");
     }
@@ -73,10 +75,10 @@ class User{
         return $this->conn_handler;
     }
 	
-    public function instant(){
+    /*public function instant(){
         @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use instance() instead.', E_USER_DEPRECATED);
         return $this->instance();
-    }
+    }*/
 
     public function instance(){
         $this->conn()->prepare($this->instanceQuery);
