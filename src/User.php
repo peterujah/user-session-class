@@ -11,6 +11,7 @@ class User{
     const GUEST = "_user_guest_class_";
     const LIVE = "_user_live_class_";
     private $index = "login";
+    private $tableSelect = "*";
     private $userTable = "user_table_name";
     private $userIdentifier = "user_id";
     protected $db;
@@ -19,9 +20,9 @@ class User{
     public function __construct($db) {
         $this->db = $db;
         $this->setUserQuery("
-            SELECT *
-            FROM  {$this->$userTable} 
-            WHERE {$this->$userIdentifier} = :check_user_key
+            SELECT {$this->tableSelect}
+            FROM  {$this->userTable} 
+            WHERE {$this->userIdentifier} = :check_user_key
             LIMIT 1
         ");
     }
