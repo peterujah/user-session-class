@@ -20,8 +20,8 @@ class User{
         $this->db = $db;
         $this->setUserQuery("
             SELECT *
-            FROM  {$$userTable} 
-            WHERE {$$userIdentifier} = :check_user_key
+            FROM  {$this->$userTable} 
+            WHERE {$this->$userIdentifier} = :check_user_key
             LIMIT 1
         ");
     }
@@ -69,7 +69,6 @@ class User{
 
     public function conn(){
         if(empty($this->conn_handler)){
-           //$this->conn_handler = new Conn($_SERVER["SERVER_NAME"]=="localhost");
 	    $this->conn_handler = new DBHandler($_SERVER['SERVER_NAME']);
         }
         return $this->conn_handler;
